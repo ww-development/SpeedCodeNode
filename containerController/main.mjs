@@ -11,8 +11,8 @@ async function getContainers() {
     for(var i = 0; i < containers.length; i++) {
         var status = await containers[i].status();
         
-        if(status.data.Name.includes("/pythonapi")) {
-            IPs.push(status.data.NetworkSettings.Networks.pythonapi_default.IPAddress);
+        if(status.data.Name.includes("/containercode")) {
+            IPs.push(status.data.NetworkSettings.Networks.containercode_default.IPAddress);
         }
     }
 
@@ -27,6 +27,8 @@ async function sendWork(ip, work) {
 
 async function main() {
     var IPs = await getContainers();
+
+    console.log(IPs);
 
     console.log(await sendWork(IPs[0], 'print("hello world")'));
 }

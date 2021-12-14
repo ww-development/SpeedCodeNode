@@ -3,22 +3,9 @@ version: "3.3"
 services:
   co-1:
     build: ./src
-    volumes:
-      - ./src:/usr/src/app
-
   co-2:
     build: ./src
-    volumes:
-      - ./src:/usr/src/app
-
   co-3:
     build: ./src
-    volumes:
-      - ./src:/usr/src/app
-
   co-4:
     build: ./src
-    volumes:
-      - ./src:/usr/src/app
-    
-

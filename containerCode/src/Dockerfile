@@ -13,7 +13,7 @@ COPY package*.json ./
 # # RUN npm ci --only=production
 
 # # Bundle app source
-# COPY . .
+COPY . .
 
 RUN npm install
 
