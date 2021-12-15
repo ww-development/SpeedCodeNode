@@ -82,7 +82,7 @@ var handler = new taskHandler();
 
 io.on("connection", (socket) => {
   socket.on("work", (msg) => {
-    handler.addTask(msg, 1, function (result) {
+    handler.addTask(msg, socket.id, function (result) {
       socket.emit("result", result);
     });
   });
